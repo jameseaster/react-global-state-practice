@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import GlobalStateProvider from "./store/GlobalStateProvider";
+import Nav from "./components/Nav";
+import DownloadImage from "./components/DownloadImage";
+import LoginNotification from "./components/LoginNotification";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalStateProvider>
+      <div className="App">
+        <Nav />
+        <h1>Download Image</h1>
+        <DownloadImage />
+        <LoginNotification />
+      </div>
+    </GlobalStateProvider>
   );
 }
-
-export default App;
